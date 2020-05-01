@@ -29,16 +29,17 @@ const Dashboard: React.FC = () => {
     loadTransactions();
   }, []);
 
-  const renderTransactions = () => transactions.map(transaction => (
-    <TransactionCard
-      key={transaction.id}
-      title={transaction.title}
-      isOutcome={transaction.isOutcome}
-      valueFormatted={transaction.valueFormatted}
-      dateFormatted={transaction.createdAtFormatted}
-      category={transaction.category}
-    />
-  ));
+  const renderTransactions: () => JSX.Element[] = () =>
+    transactions.map(transaction => (
+      <TransactionCard
+        key={transaction.id}
+        title={transaction.title}
+        isOutcome={transaction.isOutcome}
+        valueFormatted={transaction.valueFormatted}
+        dateFormatted={transaction.createdAtFormatted}
+        category={transaction.category}
+      />
+    ));
 
   return (
     <>
