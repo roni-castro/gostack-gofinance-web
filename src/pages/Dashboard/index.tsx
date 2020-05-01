@@ -17,7 +17,11 @@ import TransactionCard from '../../components/TransactionCard';
 
 const Dashboard: React.FC = () => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
-  const [balance, setBalance] = useState<Balance>({} as Balance);
+  const [balance, setBalance] = useState<Balance>({
+    income: 0,
+    outcome: 0,
+    total: 0,
+  } as Balance);
 
   useEffect(() => {
     async function loadTransactions(): Promise<void> {
